@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <!--         start header          -->
+        <header>
+            <h2 class="logo">Logo</h2>
+            <nav class="navigation">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+                <button  id="butt" class="btnlogin-popup">LogIn</button>
+            </nav>
+        </header>
+        <!--         end header          -->
+        
+        <!--         start wrapper          -->
+        <div class="wrapper" id="contaner" style="display: none;"> 
+            <div class="ex"><div class="icon" id="cross"><ion-icon name="close-outline"></ion-icon></div></div>
+            <div  id="wrap" class="form-box login">
+                <h2>Login</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox" name="" id="">Remember Me</label>
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="loggin-regester">
+                        <p>Don't have a password?<a href="#" id="reg" class="regester-link">Regester</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+            <div class="ex"><div class="icon"><ion-icon name="close-outline"></ion-icon></div></div>
+            <div id="wrap2" class="form-box regester" style="margin-top: -6%; display: none; margin-left: 59%; position: absolute; z-index: 100; color: #fff;">
+                <h2 style="margin-left: 21%;">Regester</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="person"></ion-icon></span>
+                        <input type="text" required>
+                        <label>Username</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox" name="" id="">I agree about that terms & conditions</label>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="loggin-regester">
+                        <p style="margin-top: 18%;">Already have a password?<a id="log" style="margin-left: 32%; position: absolute;" href="#" class="regester-link">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        <!--         end wrapper          -->
+
+        <section>
+            <h1 id="h1">Lorem ipsum dolor sit amet.</h1>
+            <p id="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem ab quod, necessitatibus tenetur esse velit sed impedit aperiam vero eius? Harum adipisci assumenda beatae molestiae reiciendis perferendis nemo doloremque quis sed necessitatibus quibusdam non delectus architecto eius ex quasi culpa quisquam enim facilis obcaecati, autem dolorem. Ut quasi deleniti qui.</p>
+            <img id="img" src="./Sign up-cuate.png" alt="">
+        </section>
+        
+        <!--         javascript          -->
+        <script src="./main.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script>
+            let wrap = document.getElementById("wrap")
+            let wrap2 = document.getElementById("wrap2")
+            let reg = document.getElementById("reg")
+            let log = document.getElementById("log")
+            let butt = document.getElementById("butt")
+            let cross = document.getElementById("cross")
+            let contaner = document.getElementById("contaner")
+            let h1 = document.getElementById("h1")
+            let p = document.getElementById("p")
+            let img = document.getElementById("img")
+            reg.onclick = function(){
+                wrap.style.marginLeft = "-200%"
+                wrap2.style.marginLeft = "0%"
+                wrap2.style.display = "block"
+                wrap.style.transition = ".5s"
+                wrap.style.display = "none"
+            }
+            log.onclick = function(){
+                wrap2.style.marginLeft = "50%"
+                wrap.style.marginLeft = "0%"
+                wrap.style.display = "block"
+                wrap2.style.transition = ".5s"
+                wrap2.style.display = "none"
+            }
+            butt.onclick = function (){
+                contaner.style.display = "flex"
+                h1.style.display = "none"
+                p.style.display = "none"
+                img.style.display = "none"
+            }
+            cross.onclick = function (){
+                contaner.style.display = "none"
+                h1.style.display = "flex"
+                p.style.display = "flex"
+                img.style.display = "flex"
+            }
+        </script>
+    </body>
+</html>
